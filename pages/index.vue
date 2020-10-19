@@ -1,5 +1,8 @@
 <template>
-<h6 class="bg-danger">Home Page</h6>
+
+  <div>
+  <i class="fas fa-user"></i>
+  </div>
 </template>
 
 <script>
