@@ -6,6 +6,8 @@ import { __esModule } from 'vform';
 // require all components in the current directory and subdirectories
 const requireComponent = require.context('.', true, /_base-[\w-]+\.vue$/);
 
+console.log(requireComponent)
+
 requireComponent.keys().forEach(fileName => {
   // get the component's configuration
   const componentConfig = requireComponent(fileName);
@@ -14,6 +16,7 @@ requireComponent.keys().forEach(fileName => {
     .split('/')
     .pop()
     .replace(/\.\w+$/, '');
+
 
   const componentName = upperFirst(camelCase(fn));
 

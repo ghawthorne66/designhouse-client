@@ -23,9 +23,9 @@
         </div>
 
         <div class="text-right">
-          <button type="submit" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
+          <base-button type="submit" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
             Resend
-          </button>
+          </base-button>
         </div>
       </form>
     </div>

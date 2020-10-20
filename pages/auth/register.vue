@@ -64,7 +64,7 @@
         </div>
 
         <div class="text-right">
-          <button type="submit"
+          <base-button type="submit"
                   :disabled="form.busy"
                   class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
               <span v-if="form.busy">
@@ -72,7 +72,7 @@
 
               </span>
             Register
-          </button>
+          </base-button>
         </div>
         <p class="font-14 fw-400 text-center mt-4">
           Already have an account?

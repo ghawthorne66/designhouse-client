@@ -21,11 +21,11 @@
         </div>
 
         <div class="text-right">
-          <button
+          <base-button
             type="submit"
             :disabled="form.busy">
             Send Reset Link
-          </button>
+          </base-button>
         </div>
         <p class="font-14 fw-400 text-center mt-4">
           <nuxt-link :to="{ name: 'login' }" class="color-blue">
@@ -37,7 +37,9 @@
   </section>
 </template>
 <script>
+import BaseButton from "~/components/_global/buttons/_base_button";
 export default {
+  components: {BaseButton},
   data() {
     return {
       status: '',

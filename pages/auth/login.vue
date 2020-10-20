@@ -8,26 +8,25 @@
         <alert-error v-if="form.errors.has('message')" :form="form">
           {{ form.errors.get('message') }}
           <nuxt-link :to="{ name: 'verification.resend' }"
-          >Resend verification email</nuxt-link>
+          >Resend verification email</nuxt-link
+          >
         </alert-error>
         <div class="form-group">
-          <input
-            type="text"
+          <base-input
             :form="form"
             field="email"
             v-model="form.email"
             placeholder="Email"
-          >
+          ></base-input>
         </div>
         <div class="form-group">
-          <input
-            type="text"
+          <base-input
             :form="form"
             field="password"
             inputType="password"
             v-model="form.password"
             placeholder="Password"
-          >
+          ></base-input>
         </div>
         <div class="mt-4 mb-4 clearfix">
           <nuxt-link
@@ -38,9 +37,9 @@
           </nuxt-link>
         </div>
         <div class="text-right">
-          <button :loading="form.busy">
+          <base-button :loading="form.busy">
             Login
-          </button>
+          </base-button>
         </div>
         <p class="font-14 fw-400 text-center mt-4">
           Don't have an account yet?

@@ -10,7 +10,9 @@
             {{ status }}
 <!--            Email successfully verified.-->
           </div>
-          <a href="#">Proceed to Login</a>
+          <nuxt-link :to="{ name: 'login' }" class="color-blue">
+            Proceed to login
+          </nuxt-link>
         </div>
         <div class="form-group" v-else>
           <div class="alert alert-danger">

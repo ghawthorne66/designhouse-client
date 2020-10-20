@@ -42,9 +42,9 @@
         </div>
 
         <div class="text-right">
-          <button :loading="form.busy">
+          <base-button :loading="form.busy">
             Reset Password
-          </button>
+          </base-button>
         </div>
       </form>
     </div>
