@@ -12,33 +12,33 @@
           </p>
         </alert-success>
         <div class="form-group">
-          <input
+          <base-input
             :form="form"
             :readonly="true"
             field="email"
             v-model="form.email"
             placeholder="Email"
-          />
+          ></base-input>
         </div>
 
         <div class="form-group">
-          <input
+          <base-input
             :form="form"
             inputType="password"
             field="password"
             v-model="form.email"
             placeholder="New Password"
-          />
+          ></base-input>
         </div>
 
         <div class="form-group">
-          <input
+          <base-input
             :form="form"
             inputType="password"
             field="password_confirmation"
             v-model="form.password_confirmation"
             placeholder="Confirm New Password"
-          />
+          ></base-input>
         </div>
 
         <div class="text-right">
@@ -50,8 +50,10 @@
     </div>
   </section>
 </template>
+
 <script>
 export default {
+  middleware: ['guest'],
   data() {
     return {
       status: '',

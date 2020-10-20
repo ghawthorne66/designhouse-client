@@ -8,18 +8,13 @@
         <div class="form-group" v-if="success">
           <div class="alert alert-success">
             {{ status }}
-<!--            Email successfully verified.-->
           </div>
-          <nuxt-link :to="{ name: 'login' }" class="color-blue">
-            Proceed to login
-          </nuxt-link>
+          <nuxt-link to="/login">Proceed to Login</nuxt-link>
         </div>
         <div class="form-group" v-else>
           <div class="alert alert-danger">
             {{ status }}
-<!--            An error was encountered.-->
           </div>
-          <a href="#">Resend verification link</a>
         </div>
       </form>
     </div>
@@ -28,7 +23,7 @@
 
 <script>
 export default {
-
+  middleware: ['guest'],
   async asyncData({ params, query, app }) {
     const q = await Object.keys(query)
       .map(k => `${k}=${query[k]}`)

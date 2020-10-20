@@ -7,23 +7,16 @@
       <form class="auth-form" @submit.prevent="submit">
         <alert-success :form="form">{{ status }}</alert-success>
         <div class="form-group">
-          <input
-            type="text"
-            name="email"
+          <base-input
             :form="form"
+            field="email"
             v-model="form.email"
-            class="form-control form-control-lg font-14 fw-300"
-            :class="{ 'is-invalid': form.errors.has('email') }"
             placeholder="Email"
-          />
-          <has-error :form="form" field="email"></has-error>
-
+          ></base-input>
         </div>
 
         <div class="text-right">
-          <base-button
-            type="submit"
-            :disabled="form.busy">
+          <base-button :loading="form.busy">
             Send Reset Link
           </base-button>
         </div>
@@ -36,9 +29,11 @@
     </div>
   </section>
 </template>
+
 <script>
 import BaseButton from "~/components/_global/buttons/_base_button";
 export default {
+  middleware: ['guest'],
   components: {BaseButton},
   data() {
     return {

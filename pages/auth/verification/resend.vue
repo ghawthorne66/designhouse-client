@@ -5,25 +5,23 @@
         Resend Verification Email
       </h1>
       <form class="auth-form" @submit.prevent="submit">
-        <alert-error form="form" v-if="form.errors.has('message')" >
-          console.log({{ form.errors.get('message') }})
+        <alert-error v-if="form.errors.has('message')" :form="form">
+          {{ form.errors.get('message') }}
         </alert-error>
         <alert-success :form="form">
           We have resent the verification email
         </alert-success>
         <div class="form-group">
-          <input
+          <base-input
             :form="form"
-            type="text"
-            name="email"
+            field="email"
             v-model="form.email"
-            class="form-control form-control-lg font-14 fw-300"
             placeholder="Email"
-          />
+          ></base-input>
         </div>
 
         <div class="text-right">
-          <base-button type="submit" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
+          <base-button :loading="form.busy">
             Resend
           </base-button>
         </div>
@@ -32,8 +30,10 @@
   </section>
 </template>
 
+
 <script>
 export default {
+  middleware: ['guest'],
   data() {
     return {
       form: this.$vform({
