@@ -5,17 +5,17 @@
         Email Verification
       </h1>
       <form class="auth-form">
-
-
-        <div class="form-group">
+        <div class="form-group" v-if="success">
           <div class="alert alert-success">
-            Email successfully verified.
+            {{ status }}
+<!--            Email successfully verified.-->
           </div>
           <a href="#">Proceed to Login</a>
         </div>
-        <div class="form-group">
+        <div class="form-group" v-else>
           <div class="alert alert-danger">
-            An error was encountered.
+            {{ status }}
+<!--            An error was encountered.-->
           </div>
           <a href="#">Resend verification link</a>
         </div>
@@ -26,7 +26,20 @@
 
 <script>
 export default {
-name: "verify"
+
+  async asyncData({ params, query, app }) {
+    const q = await Object.keys(query)
+      .map(k => `${k}=${query[k]}`)
+      .join('&');
+    try {
+      const { data } = await app.$axios.post(
+        `/verification/verify/${params.id}?${q}`
+      );
+      return { success: true, status: data.message };
+    } catch (e) {
+      return { success: false, status: e.response.data.errors.message };
+    }
+  }
 }
 </script>
 

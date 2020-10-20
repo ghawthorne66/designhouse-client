@@ -57,14 +57,14 @@
 
       <!-- Before Login -->
       <template v-if="!$auth.loggedIn">
-      <ul class="before-login font-14 fw-300 text-uppercase">
-        <li>
-          <nuxt-link :to="{name: `register` }">Sign Up</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link :to="{name: `login` }">Log In</nuxt-link>
-        </li>
-      </ul>
+        <ul class="before-login font-14 fw-300 text-uppercase">
+          <li>
+            <nuxt-link :to="{name: `register` }">Sign Up</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="{name: `login` }">Log In</nuxt-link>
+          </li>
+        </ul>
       </template>
       <!-- End Before Login -->
 
@@ -123,7 +123,7 @@ Keyser Söze</span
                 Setting
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" title="Sign Out">
+              <a class="dropdown-item" href="#" title="Sign Out" @click.prevent="logout">
                 <i class="fa fa-lock"></i>
                 Sign Out
               </a>
@@ -139,12 +139,12 @@ Keyser Söze</span
 
 <script>
 export default {
-  name: "navigation.vue",
-  data() {
-    return {
-      $auth: null
+  methods: {
+    logout() {
+      this.$auth.logout();
     }
-  }
+  },
+
 }
 </script>
 

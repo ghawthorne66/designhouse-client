@@ -4,11 +4,19 @@
       <h1 class="text-uppercase fw-500 mb-4 text-center font-22">
         Resend Verification Email
       </h1>
-      <form class="auth-form">
+      <form class="auth-form" @submit.prevent="submit">
+        <alert-error form="form" v-if="form.errors.has('message')" >
+          console.log({{ form.errors.get('message') }})
+        </alert-error>
+        <alert-success :form="form">
+          We have resent the verification email
+        </alert-success>
         <div class="form-group">
           <input
+            :form="form"
             type="text"
             name="email"
+            v-model="form.email"
             class="form-control form-control-lg font-14 fw-300"
             placeholder="Email"
           />
@@ -26,8 +34,23 @@
 
 <script>
 export default {
-  name: "resend"
+  data() {
+    return {
+      form: this.$vform({
+        email: ''
+      })
+    };
+  },
+  methods: {
+    submit() {
+      this.form
+        .post(`/verification/resend`)
+        .then(res => this.form.reset())
+        .catch(e => console.log(e));
+    }
+  }
 }
+
 </script>
 
 <style scoped>

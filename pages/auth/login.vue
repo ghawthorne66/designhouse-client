@@ -8,8 +8,7 @@
         <alert-error v-if="form.errors.has('message')" :form="form">
           {{ form.errors.get('message') }}
           <nuxt-link :to="{ name: 'verification.resend' }"
-          >Resend verification email</nuxt-link
-          >
+          >Resend verification email</nuxt-link>
         </alert-error>
         <div class="form-group">
           <input

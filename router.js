@@ -9,7 +9,14 @@ const routes = [
   {path: '/', name: 'index', component: page('index.vue')},
   {path: '/login', name: 'login', component: page('auth/login.vue')},
   {path: '/register', name: 'register', component: page('auth/register.vue')},
-  {path: '/verification/verify/:id', name: 'verify', component: page('auth/verification/verify.vue')}
+  {path: '/verification/verify/:id',
+    name: 'verify',
+    component: page('auth/verification/verify.vue')},
+  {
+    path: '/verification/resend',
+    name: 'verification.resend',
+    component: page('auth/verification/resend.vue')
+  },
 
   // {path: '/password-reset', name: 'password-reset', component: page('password/password-reset.vue')},
   // {path: '/reset-email', name: 'reset-email', component: page('password/reset-email.vue')}
