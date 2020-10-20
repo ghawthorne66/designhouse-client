@@ -17,9 +17,26 @@ const routes = [
     name: 'verification.resend',
     component: page('auth/verification/resend.vue')
   },
-
-  // {path: '/password-reset', name: 'password-reset', component: page('password/password-reset.vue')},
-  // {path: '/reset-email', name: 'reset-email', component: page('password/reset-email.vue')}
+  {
+    path: '/password/email',
+    name: 'password.email',
+    component: page('auth/password/reset-email.vue')
+  },
+  {
+    path: '/password/reset/:token',
+    name: 'password.reset',
+    component: page('auth/password/password-reset.vue')
+  },
+  {
+    path: '/upload',
+    name: 'designs.upload',
+    component: page('user/designs/create.vue')
+  },
+  {
+    path: '/designs/:id/edit',
+    name: 'designs.edit',
+    component: page('user/designs/edit.vue')
+  },
 
 ]
 
