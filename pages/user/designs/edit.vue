@@ -23,9 +23,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <form 
-              <!-- class="auth-form" @submit.prevent="submit" -->
-              >
+              <form class="auth-form" @submit.prevent="submit">
                 <alert-success :form="form">
                   Design successfully updated
                 </alert-success>
