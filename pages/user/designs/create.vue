@@ -41,7 +41,7 @@
 </template>
 <script>
 // import Slim from '@/components/slim/slim.module.js';
-import Slim from '@/components/slim/slim';
+import Slim from '@/components/slim-two/slim';
 
 export default {
   // middleware: ['auth'],
