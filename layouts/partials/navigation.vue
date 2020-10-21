@@ -89,32 +89,25 @@
                 alt="Greg Hawthorne"
               />
               <div class="usr-info">
-                                <span class="user-name font-14 fw-500"
-                                >
-Keyser Söze</span
-                                >
-                <span class="user-deg font-10 fw-300"
-                >Sr. UI Designer</span
-                >
+                <span class="user-name font-14 fw-500">Keyser Söze</span>
+                <span class="user-deg font-10 fw-300">Sr. UI Designer</span>
                 <span class="down-chevron">
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
+                  <i class="fa fa-angle-down"></i>
+                </span>
               </div>
             </a>
-            <div
-              class="dropdown-menu user-dropdown font-14 fw-500"
-              aria-labelledby="userDropdown"
-            >
+            <div class="dropdown-menu user-dropdown font-14 fw-500"
+              aria-labelledby="userDropdown">
               <div class="dropdown-title-group font-12 fw-500">
-                                <span class="dropdown-title text-uppercase"
-                                >Your Account</span
-                                >
+                <span class="dropdown-title text-uppercase">Your Account</span>
               </div>
-              <a
-                class="dropdown-item mt-28"
+              <nuxt-link to="/settings/dashboard" class="dropdown-item mt-28">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+              </nuxt-link>
+              <a class="dropdown-item mt-28"
                 href="#"
-                title="Profile"
-              >
+                title="Profile">
                 <i class="fa fa-user"></i>
                 Profile
               </a>
